@@ -1,4 +1,9 @@
 ---
+# This reusable workflow is called from other repositories.
+# Workflow lockfiles don't lock reusable workflows called from other repositories,
+# so actions in this workflow must be pinned by full length commit SHAs.
+# Don't onboard this workflow to the lockfile: run `gh actions-lock` with the target workflows.
+#   gh actions-lock .github/workflows/actionlint.yaml .github/workflows/autofix.yaml
 name: test
 on:
   workflow_call:
